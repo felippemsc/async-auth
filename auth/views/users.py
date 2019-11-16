@@ -2,7 +2,7 @@ from aiohttp import web
 
 from webargs.aiohttpparser import use_args
 
-from auth.models.users import User
+from auth.models.users import User, EmailAlreadyExists
 from auth.schemas.users import UserSchema
 
 
@@ -11,9 +11,12 @@ class UserView(web.View):
     model = User
 
     @use_args(UserSchema)
-    async def post(self, user):
-        user_dict = await self.schema.new_key(user)
-        user = await self.model.objects.create(**user_dict)
+    async def post(self, user_dict):
+        try:
+            user = await self.model.save(user_dict)
+        except EmailAlreadyExists as err:
+            raise web.HTTPBadRequest(text=err.msg)
+
         return web.json_response(self.schema.dump(user))
 
     async def get(self):

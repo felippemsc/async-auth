@@ -2,9 +2,11 @@
 
 TODO:
 
-[ ] Deal with unique violations
+[ ] Hash password
 
-[ ] Hash password and set id to user
+[ ] Make Pagination at GET
+
+[ ] Add GET, PUT and DELETE for users
 
 [ ] Add black and mypy
 
