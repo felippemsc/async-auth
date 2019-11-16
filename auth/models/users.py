@@ -21,6 +21,6 @@ class User(orm.Model):
     async def get_new_key(cls, key_lenth: int = 8):
         key = gen_key(key_lenth)
         while await cls.objects.filter(key=key).exists():
-            key = gen_key(9)
+            key = gen_key(key_lenth)
 
         return key

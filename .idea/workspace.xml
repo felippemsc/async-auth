@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36f1368c-877c-40a8-9724-155bfe8508a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/models/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/models/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth/schemas/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/schemas/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/views/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/views/users.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,25 +15,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth/database.py">
+        <entry file="file://$PROJECT_DIR$/auth/views/users.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="226">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth/views/users.py">
+        <entry file="file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="61">
+              <caret line="1183" selection-start-line="1183" selection-end-line="1183" />
             </state>
           </provider>
         </entry>
@@ -48,11 +40,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auth/schemas/users.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="150">
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -81,12 +73,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="30">
-                <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+              <first_editor relative-caret-position="90">
+                <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
               </first_editor>
               <second_editor />
             </state>
@@ -97,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/auth/models/users.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="213">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -157,10 +149,10 @@
         <option value="$PROJECT_DIR$/auth/middleware.py" />
         <option value="$PROJECT_DIR$/Pipfile" />
         <option value="$PROJECT_DIR$/auth/views/users.py" />
-        <option value="$PROJECT_DIR$/auth/schemas/users.py" />
-        <option value="$PROJECT_DIR$/auth/models/users.py" />
         <option value="$PROJECT_DIR$/auth/utils.py" />
+        <option value="$PROJECT_DIR$/auth/models/users.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/auth/schemas/users.py" />
       </list>
     </option>
   </component>
@@ -253,7 +245,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$USER_HOME$/envs/async-auth/bin/gunicorn" />
-      <option name="PARAMETERS" value="-w 1 -b 0.0.0.0:8000 -k aiohttp.worker.GunicornWebWorker main:app" />
+      <option name="PARAMETERS" value="-w 1 -b 0.0.0.0:8000 -k aiohttp.worker.GunicornWebWorker main:app -t 180" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -346,39 +338,74 @@
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/auth/schemas/users.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="107" />
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1183</line>
+          <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/auth/schemas/users.py</url>
-          <line>14</line>
-          <option name="timeStamp" value="108" />
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1184</line>
+          <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/auth/schemas/users.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="110" />
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1185</line>
+          <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/auth/models/users.py</url>
-          <line>21</line>
-          <option name="timeStamp" value="115" />
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1187</line>
+          <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/auth/models/users.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="116" />
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1186</line>
+          <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/auth/models/users.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="117" />
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1188</line>
+          <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/auth/models/users.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="118" />
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1189</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1190</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1194</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1193</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1195</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1197</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1198</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py</url>
+          <line>1196</line>
+          <option name="timeStamp" value="133" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -390,6 +417,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>format_func</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>await user_dict</expression-string>
         <language-id>Python</language-id>
@@ -546,26 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth/schemas/users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth/models/users.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auth/views/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -573,23 +585,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="90">
+            <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/models/users.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/auth/views/users.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="226">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="30">
-            <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$USER_HOME$/envs/async-auth/lib/python3.8/site-packages/marshmallow/fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="1183" selection-start-line="1183" selection-end-line="1183" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/schemas/users.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
