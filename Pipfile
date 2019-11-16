@@ -4,5 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-aiohttp = "*"
-gunicorn = "*"
+aiohttp = "~=3.6"
+asyncpg = "~=0.19"
+gunicorn = "~=20.0"
+orm = "~=0.1"
+psycopg2 = "~=2.8"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
