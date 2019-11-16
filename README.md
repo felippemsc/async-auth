@@ -2,8 +2,6 @@
 
 TODO:
 
-[ ] Add rule to validate password
-
 [ ] Make Pagination at GET
 
 [ ] Add GET, PUT and DELETE for users
