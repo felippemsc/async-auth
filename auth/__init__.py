@@ -1,7 +1,7 @@
 from aiohttp import web
 
 from auth.database import init_pg
-# from .middleware import ERROR_MIDDLEWARE
+from auth.middleware import ERROR_MIDDLEWARE
 
 from auth.views import Index
 from auth.views.users import UserView
@@ -20,6 +20,6 @@ def create_app():
     app.router.add_view('/', Index)
     app.router.add_view('/user', UserView)
 
-    # app.middlewares.append(ERROR_MIDDLEWARE)
+    app.middlewares.append(ERROR_MIDDLEWARE)
 
     return app
