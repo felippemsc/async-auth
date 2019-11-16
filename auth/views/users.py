@@ -7,7 +7,7 @@ from auth.schemas.users import UserSchema
 
 
 class UserView(web.View):
-    schema = UserSchema()
+    schema = UserSchema
     model = User
 
     @use_args(UserSchema)
@@ -17,8 +17,8 @@ class UserView(web.View):
         except EmailAlreadyExists as err:
             raise web.HTTPBadRequest(text=err.msg)
 
-        return web.json_response(self.schema.dump(user))
+        return web.json_response(self.schema().dump(user))
 
     async def get(self):
         users = await self.model.objects.all()
-        return web.json_response({"users": UserSchema(many=True).dump(users)})
+        return web.json_response({"users": self.schema(many=True).dump(users)})

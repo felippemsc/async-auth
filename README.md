@@ -2,7 +2,7 @@
 
 TODO:
 
-[ ] Hash password
+[ ] Add rule to validate password
 
 [ ] Make Pagination at GET
 
@@ -15,3 +15,5 @@ TODO:
 [ ] CI
 
 [ ] JWT
+
+[ ] Remove GET for listing users after implement new resource 
