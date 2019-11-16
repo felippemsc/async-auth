@@ -16,3 +16,10 @@ async def hash_password(password: str, salt: str):
     hashed_pass.update(salted_pass)
 
     return hashed_pass.hexdigest()
+
+
+class Pagination:
+    def __init__(self, limit: int = 100, offset: int = 0):
+        self.limit = limit
+        self.offset = offset
+
