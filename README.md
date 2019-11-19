@@ -2,8 +2,6 @@
 
 TODO:
 
-[ ] Add black and mypy
-
 [ ] Add test
 
 [ ] CI
