@@ -2,7 +2,7 @@ from marshmallow import Schema, fields, ValidationError
 
 
 def validate_password(password: str):
-    special_sym = '!$@#%&*/?;:|][}{~^'
+    special_sym = "!$@#%&*/?;:|][}{~^"
 
     if len(password) < 8 or len(password) > 20:
         raise ValidationError("Length must be between 8 and 20.")
@@ -17,7 +17,9 @@ def validate_password(password: str):
         raise ValidationError("Must have at least one lowercase letter.")
 
     if not any(char in special_sym for char in password):
-        raise ValidationError("Must have at least one of the symbols !$@#%&*/?;:|][}{~^")
+        raise ValidationError(
+            "Must have at least one of the symbols !$@#%&*/?;:|][}{~^"
+        )
 
 
 class UserSchema(Schema):

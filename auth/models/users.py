@@ -30,12 +30,14 @@ class User(orm.Model):
     async def save(cls, user: dict):
         instance = cls(**user)
         instance.key = await cls.get_new_key()
-        instance.password = await hash_password(str(instance.password), str(instance.key))
+        instance.password = await hash_password(
+            str(instance.password), str(instance.key)
+        )
 
         try:
             return await cls.objects.create(**instance)
         except UniqueViolationError:
-            raise EmailAlreadyExists('e-mail already exists')
+            raise EmailAlreadyExists("e-mail already exists")
 
     @classmethod
     async def get_new_key(cls, key_lenth: int = 8):

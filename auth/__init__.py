@@ -17,8 +17,8 @@ def create_app():
 
     app.on_startup.append(init_pg)
 
-    app.router.add_view('/', Index)
-    app.router.add_view('/user', UserView)
+    app.router.add_view("/", Index)
+    app.router.add_view("/user", UserView)
 
     app.middlewares.append(ERROR_MIDDLEWARE)
 

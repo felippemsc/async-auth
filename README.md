@@ -2,13 +2,13 @@
 
 TODO:
 
-[ ] Add GET, PUT and DELETE for users
-
 [ ] Add black and mypy
 
 [ ] Add test
 
 [ ] CI
+
+[ ] Add GET, PUT and DELETE for users
 
 [ ] JWT
 
