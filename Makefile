@@ -4,3 +4,12 @@ dev-env:
 
 lock:
 	pipenv lock
+
+lint:
+	@echo "Running black..."
+	@black .
+
+	@echo ""
+
+	@echo "Running mypy..."
+	@mypy --ignore-missing-imports .
