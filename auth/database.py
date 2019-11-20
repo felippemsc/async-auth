@@ -9,3 +9,7 @@ async def init_pg(app):
     engine.connect().execute(f"CREATE SCHEMA IF NOT EXISTS {settings.DB.schema}")
     METADATA.create_all(engine)
     await DATABASE.connect()
+
+
+async def close_pg(app):
+    await DATABASE.disconnect()

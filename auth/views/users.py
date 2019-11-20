@@ -21,18 +21,14 @@ class UserView(web.View):
 
         return web.json_response(self.schema().dump(user))
 
-    # TODO: Pagination is badly set once ORM lib does not enable limit and offset.
-    #  The setup is acceptable once this is an example and won't present a big database.
     @use_args(QueryStringSchema, locations=("querystring",))
     async def get(self, query_params):
         pagination = Pagination(**query_params)
-        users = await self.model.objects.all()
+        users = await self.model.get_many(limit=pagination.limit, offset=pagination.offset)
 
         response_body = {
-            "count": len(users),
-            "users": self.schema(many=True).dump(
-                users[pagination.offset : pagination.offset + pagination.limit]
-            ),
+            "count": await User.count(),
+            "users": self.schema(many=True).dump(users),
         }
         if response_body["count"] > len(response_body["users"]):
             return web.json_response(response_body, status=206)
