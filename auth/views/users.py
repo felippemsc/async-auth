@@ -24,7 +24,9 @@ class UserView(web.View):
     @use_args(QueryStringSchema, locations=("querystring",))
     async def get(self, query_params):
         pagination = Pagination(**query_params)
-        users = await self.model.get_many(limit=pagination.limit, offset=pagination.offset)
+        users = await self.model.get_many(
+            limit=pagination.limit, offset=pagination.offset
+        )
 
         response_body = {
             "count": await User.count(),

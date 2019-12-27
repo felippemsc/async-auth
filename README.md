@@ -2,11 +2,11 @@
 
 TODO:
 
-[ ] Change to databases
+[ ] Implement wait for services script
 
-[ ] Add test (https://pypi.org/project/pytest-aiohttp/)
+[ ] Add test (https://pypi.org/project/pytest-aiohttp/) (https://docs.aiohttp.org/en/stable/testing.html#pytest)
 
-[ ] CI
+[ ] CI (Github Actions)
 
 [ ] Add GET, PUT and DELETE for users
 

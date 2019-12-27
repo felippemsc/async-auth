@@ -35,7 +35,8 @@ class User(orm.Model):
     @classmethod
     async def count(cls):
         return await DATABASE.fetch_val(
-            query=f"SELECT COUNT(*) FROM {settings.DB.schema}.{cls.__tablename__}", column='count'
+            query=f"SELECT COUNT(*) FROM {settings.DB.schema}.{cls.__tablename__}",
+            column="count",
         )
 
     @classmethod
