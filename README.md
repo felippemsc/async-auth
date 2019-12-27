@@ -2,9 +2,11 @@
 
 TODO:
 
-[ ] Add test
+[ ] Implement wait for services script
 
-[ ] CI
+[ ] Add test (https://pypi.org/project/pytest-aiohttp/) (https://docs.aiohttp.org/en/stable/testing.html#pytest)
+
+[ ] CI (Github Actions)
 
 [ ] Add GET, PUT and DELETE for users
 
