@@ -25,6 +25,9 @@ lint:
 > @echo "Running mypy..."
 > @mypy --ignore-missing-imports .
 
+check:
+> @pytest --cov=auth tests/
+
 migration:
 > @PYTHONPATH=$(PYTHONPATH) alembic revision --autogenerate
 

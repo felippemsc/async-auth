@@ -1,0 +1,9 @@
+/migrations
+/tests
+.mypy_cache
+.pre-commit
+.coverage
+.pre-commit-config.yaml
+docker-compose.yml
+docker-compose.dev.yml
+README.md
