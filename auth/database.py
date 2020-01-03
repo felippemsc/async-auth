@@ -13,3 +13,8 @@ async def init_pg(app):
 
 async def close_pg(app):
     await DATABASE.disconnect()
+
+
+async def drop_pg():
+    engine = sqlalchemy.create_engine(str(DATABASE.url))
+    METADATA.drop_all(bind=engine)

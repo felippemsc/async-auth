@@ -2,8 +2,7 @@
 
 TODO:
 
-[ ] Improve coverage (https://pypi.org/project/pytest-aiohttp/) 
-    (https://docs.aiohttp.org/en/stable/testing.html#pytest)
+[ ] Improve coverage (Test middleware, test list users)
 
 [ ] CI (Github Actions)
 

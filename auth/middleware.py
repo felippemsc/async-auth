@@ -73,5 +73,7 @@ ERROR_MIDDLEWARE = create_error_middleware(
         422: handle_422,
         499: handle_499,
     },
-    {500: handle_exceptions},
+    {
+        500: handle_exceptions
+    },
 )

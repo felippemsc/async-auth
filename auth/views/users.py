@@ -19,7 +19,7 @@ class UserView(web.View):
         except EmailAlreadyExists as err:
             raise web.HTTPBadRequest(text=err.msg)
 
-        return web.json_response(self.schema().dump(user))
+        return web.json_response(self.schema().dump(user), status=201)
 
     @use_args(QueryStringSchema, locations=("querystring",))
     async def get(self, query_params):

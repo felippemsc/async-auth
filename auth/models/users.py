@@ -50,7 +50,7 @@ class User(orm.Model):
         try:
             return await cls.objects.create(**instance)
         except UniqueViolationError:
-            raise EmailAlreadyExists("e-mail already exists")
+            raise EmailAlreadyExists("E-mail already exists")
 
     @classmethod
     async def get_new_key(cls, key_lenth: int = 8):

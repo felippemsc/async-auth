@@ -26,7 +26,10 @@ lint:
 > @mypy --ignore-missing-imports .
 
 check:
-> @pytest --cov=auth tests/
+> @docker-compose -f docker-compose.dev.yml up -d
+> @sleep .5
+> @pytest -v --cov-report term-missing --cov=auth tests/
+> @docker-compose -f docker-compose.dev.yml stop
 
 migration:
 > @PYTHONPATH=$(PYTHONPATH) alembic revision --autogenerate
