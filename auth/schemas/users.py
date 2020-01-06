@@ -1,10 +1,12 @@
 from marshmallow import Schema, fields, ValidationError
 
+from auth.constants import MIN_LENGTH_PASS, MAX_LENGTH_PASS
+
 
 def validate_password(password: str):
     special_sym = "!$@#%&*/?;:|][}{~^"
 
-    if len(password) < 8 or len(password) > 20:
+    if len(password) < MIN_LENGTH_PASS or len(password) > MAX_LENGTH_PASS:
         raise ValidationError("Length must be between 8 and 20.")
 
     if not any(char.isdigit() for char in password):

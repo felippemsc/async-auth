@@ -2,7 +2,7 @@
 
 TODO:
 
-[ ] Improve coverage (Test list users)
+[ ] Improve coverage (Test list users - Pagination and retry generating key)
 
 [ ] CI (Github Actions)
 

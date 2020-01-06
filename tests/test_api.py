@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
+import pytest
+
 from datetime import datetime
+
+from tests import fake
 
 
 class TestRoot:
@@ -96,26 +100,6 @@ class TestCreateUser:
         assert resp_json['errors'] == {'email': ['Not a valid email address.']}
         assert result.status == 422
 
-    async def test_success(self, client):
-        user_dict = {
-            'email': 'abc@abc.com',
-            'password': 'aBc123!!!'
-        }
-
-        result = await client.post('/user', data=user_dict)
-        resp_json = await result.json()
-
-        expected_response = {
-            'email': 'abc@abc.com',
-            'id': 1,
-            'updated_at': None,
-        }
-
-        assert len(resp_json.pop('key')) == 8
-        assert datetime.now() > datetime.strptime(resp_json.pop('created_at'), '%Y-%m-%dT%H:%M:%S.%f')
-        assert resp_json == expected_response
-        assert result.status == 201
-
     async def test_email_already_exists(self, client):
         user_dict = {
             'email': 'abc@abc.com',
@@ -132,3 +116,38 @@ class TestCreateUser:
 
         assert resp_json['msg'] == 'E-mail already exists'
         assert result.status == 400
+
+    @pytest.mark.parametrize("email,password", [(fake.email(), fake.password()) for _ in range(10)])
+    async def test_success(self, client, email, password):
+        user_dict = {
+            'email': email,
+            'password': password
+        }
+
+        result = await client.post('/user', data=user_dict)
+        resp_json = await result.json()
+
+        expected_response = {
+            'email': email,
+            'id': 1,
+            'updated_at': None,
+        }
+
+        assert len(resp_json.pop('key')) == 8
+        assert datetime.now() > datetime.strptime(resp_json.pop('created_at'), '%Y-%m-%dT%H:%M:%S.%f')
+        assert resp_json == expected_response
+        assert result.status == 201
+
+
+class TestListUsers:
+    async def test_no_users(self, client):
+        result = await client.get('/user')
+        assert result.status == 204
+
+    async def test_list_users(self, client, create_users):
+        result = await client.get('/user')
+        # TODO: Implement pagination
+        resp_json = await result.json()
+
+        print(resp_json)
+        assert result.status == 200

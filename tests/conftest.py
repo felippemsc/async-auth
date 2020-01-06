@@ -8,6 +8,9 @@ from aiohttp import web
 from auth import create_app
 from auth.database import drop_pg
 from auth.middleware import ERROR_MIDDLEWARE
+from auth.models.users import User
+
+from tests import fake
 
 
 class UnexpectedError(web.HTTPClientError):
@@ -21,8 +24,8 @@ class BroadException(Exception):
 @pytest.fixture
 def client(loop, aiohttp_client):
     app = create_app()
+    yield loop.run_until_complete(aiohttp_client(app))
     loop.run_until_complete(drop_pg())
-    return loop.run_until_complete(aiohttp_client(app))
 
 
 @pytest.fixture
@@ -51,3 +54,13 @@ def mid_client(loop, aiohttp_client):
     app.router.add_route('GET', '/exception', handler_500)
 
     return loop.run_until_complete(aiohttp_client(app))
+
+
+@pytest.fixture
+def create_users(loop):
+    users = [
+        {"email": fake.email(), "password": fake.password()} for _ in range(10)
+    ]
+
+    for user in users:
+        loop.run_until_complete(User.save(user))

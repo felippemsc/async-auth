@@ -32,6 +32,8 @@ class UserView(web.View):
             "count": await User.count(),
             "users": self.schema(many=True).dump(users),
         }
+        if len(response_body["users"]) == 0:
+            return web.json_response(status=204)
         if response_body["count"] > len(response_body["users"]):
             return web.json_response(response_body, status=206)
 
