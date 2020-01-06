@@ -35,10 +35,6 @@ def create_error_middleware(status_overrides, exception_overrides):
     async def error_middleware(request, handler):
         try:
             response = await handler(request)
-
-            override = status_overrides.get(response.status)
-            if override:
-                return await override(request)
             return response
 
         except web.HTTPException as ex:
@@ -49,18 +45,10 @@ def create_error_middleware(status_overrides, exception_overrides):
             raise
 
         except CancelledError as ex:
-            override = status_overrides.get(499)
-
-            if override:
-                return await override(request, ex)
-            raise
+            return await handle_499(request, ex)
 
         except Exception as ex:
-            override = exception_overrides.get(500)
-
-            if override:
-                return await override(ex)
-            raise
+            return await handle_exceptions(ex)
 
     return error_middleware
 

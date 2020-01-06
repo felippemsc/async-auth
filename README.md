@@ -2,7 +2,7 @@
 
 TODO:
 
-[ ] Improve coverage (Test middleware, test list users)
+[ ] Improve coverage (Test list users)
 
 [ ] CI (Github Actions)
 
